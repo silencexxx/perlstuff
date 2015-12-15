@@ -60,3 +60,6 @@ sub log_x {
 	}
 }
 
+sub usage {
+	print "perl <this file> <root_dir> [d for debug]\n";
+}
