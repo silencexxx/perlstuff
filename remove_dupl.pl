@@ -16,6 +16,9 @@ use vars qw/*name *dir *prune/;
 
 sub wanted;
 sub log_x;
+sub usage;
+
+&usage();
 
 use Digest::MD5::File qw( file_md5_hex );
 
