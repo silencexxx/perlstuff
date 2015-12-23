@@ -1,6 +1,9 @@
 use DateTime;
 use LWP::Simple;
 
+my ($date, $n, $dir) = @ARGV;
+my ($y, $m, $d) = $date =~ /(\d{4})(\d{2})(\d{2})/;
+
 sub downloadRocky {
 
     my $p = shift;
@@ -23,6 +26,10 @@ sub downloadRocky {
 }
 
 
-downloadRocky({startDate => {year => 2014, month => 4, day => 1},
-	       numberOfDays => 100,
-	       outputDirectory => 'G'});
+downloadRocky({
+                startDate => {year => $y, 
+                    month => $m, 
+                    day => $d},
+                numberOfDays => $n,
+                outputDirectory => $dir
+});
