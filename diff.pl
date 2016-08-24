@@ -1,5 +1,6 @@
 
 # shows rows in file1 that doesn't exist in file2
+# 
 
 print "diff\n";
 
