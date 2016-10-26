@@ -23,10 +23,8 @@ while (<$f>){
 
 my @l = ();
 
-foreach my $k (keys %d) {
-	push @l, [$d{$k}, $k]; # list with 2 item array - first no, second the string
-	#print "$d{$k}\t$k\n";
-}
+# list with 2 item array - first no, second the string
+@l = map {[$d{$_}, $_]} keys %d;
 
 print join("\n", 
 	map {$_->[0] . ":" . $_->[1]} 
