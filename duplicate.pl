@@ -6,11 +6,9 @@
 # sorted by the most duplicate first
 #
 
-open my $f, "<", @ARGV[0];
-
 my %d = ();
 
-while (<$f>){
+while (<>){
 	chomp;
 	if ($d{$_}) {
 #		print "Duplicate: $_\n";
