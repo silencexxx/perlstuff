@@ -10,13 +10,7 @@ my %d = ();
 
 while (<>){
 	chomp;
-	if ($d{$_}) {
-#		print "Duplicate: $_\n";
-		$d{$_}++;
-	}
-	else {
-		 $d{$_} = 1;
-	}
+	$d{$_} =  $d{$_} + 1;
 }
 
 my @l = ();
