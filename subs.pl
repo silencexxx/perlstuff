@@ -18,4 +18,4 @@ my $o = be($row);
 # first position is "1" (not "0")
 
 print &$o(7, 14);
-
+print &$o(3, 4);
