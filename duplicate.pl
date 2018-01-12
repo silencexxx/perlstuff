@@ -19,7 +19,7 @@ my @l = ();
 @l = map {[$d{$_}, $_]} keys %d;
 
 print join("\n", 
-	map {sprintf("%04d,%s",$_->[0],$_->[1])} 
+	map {sprintf("%04d|%s",$_->[0],$_->[1])} 
 	sort {$b->[0] <=> $a->[0]} 
 	#grep {$_->[0] > 1}
 	@l);
