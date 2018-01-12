@@ -13,15 +13,16 @@ while (<>){
 	$d{$_}++;
 }
 
-my @l = ();
-
 # list with 2 item array - first no, second the string
-@l = map {[$d{$_}, $_]} keys %d;
+my @l = map { { count=>$d{$_}, key=>$_} } keys %d;
+
+my @dupl = grep { $_->{'count'} > 1 } @l;
+
+printf("Antal dubbletter: %d\n", scalar @dupl);
 
 print join("\n", 
-	map {sprintf("%04d|%s",$_->[0],$_->[1])} 
-	sort {$b->[0] <=> $a->[0]} 
-	#grep {$_->[0] > 1}
-	@l);
+	map  { sprintf("%04d|%s", $_->{'count'}, $_->{'key'}) } 
+	sort { $b->{'count'} <=> $a->{'count'} } 
+	@dupl);
 
 
