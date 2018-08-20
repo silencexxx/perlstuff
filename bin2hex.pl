@@ -14,8 +14,8 @@ for my $b (@bt){
 	$sum += 2 ** $i if $ch;
 	$i++;
     }
-
-    print "bin: $b\tsum: $sum\n";
+    
+    printf "bin: %s\tsum: %i\thex: 0x%x\n", $b, $sum, $sum;
 }
 
 
