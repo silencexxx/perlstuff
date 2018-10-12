@@ -1,4 +1,7 @@
 use utf8;
+
+# check if 51th col is 6 numbers(date)
+
 open my $fh, "<:encoding(UTF-8)", @ARGV[0];
 #<$fh>; # header
 while (<$fh>) {
