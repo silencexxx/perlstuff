@@ -4,12 +4,11 @@ use strict;
 use Data::Dumper;
 use DBI;
 
-my $dbh = DBI->connect ("dbi:CSV:",
-                        "", "", {
-			    f_dir       =>      './',
-			    f_schema    =>       undef,
-			    f_ext       =>      '.csv/r',
-			    csv_sep_char	=>	';'
+my $dbh = DBI->connect ("dbi:CSV:", undef, undef, {
+	f_dir       =>      './',
+	f_schema    =>       undef,
+	f_ext       =>      '.csv/r',
+	csv_sep_char	=>	';'
 }) or die "Cannot create Database Handle: $DBI::errstr()";
 
 my $query = $ARGV[0];
